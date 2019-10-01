@@ -1,4 +1,4 @@
-import Employee from './employee';
+import Employee from './1-employee.mjs';
 
 function getEmployeeInformation(inputSalary) {
   Employee.salary = inputSalary;

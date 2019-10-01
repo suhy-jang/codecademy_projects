@@ -4,17 +4,25 @@ let overusedWords = ['really', 'very', 'basically'];
 
 let unnecessaryWords = ['extremely', 'literally', 'actually' ];
 
-const storyWords = story.split(' ');
-console.log(storyWords.length);
-const betterWords = storyWords.filter((word) => {
-  return !unnecessaryWords.includes(e => e === word);
-});
-let sentences = 0;
-betterWords.forEach(word => {
-  if (word[word.length-1] === '.' || word[word.length-1] === '!') {
-    sentences+=1;
+const storyWords = story.split(/\s+/g);
+
+const betterWords = storyWords.filter(word => !unnecessaryWords.includes(word));
+
+const overusedCount = storyWords.filter(word => overusedWords.includes(word)).length;
+
+let sentenceCount = 0;
+storyWords.forEach(word => {
+  if (['.', '!'].includes(word[word.length - 1])) {
+    sentenceCount += 1;
   }
+})
+
+console.log(`the word count is: ${storyWords.length}`);
+console.log(`better word count is: ${betterWords.length} \nbetter words are: ${betterWords}`);
+console.log(`over-used word count is: ${overusedCount}`);
+console.log(`sentence count is: ${sentenceCount}`);
+
+const afterRemove = betterWords.map(word => {
+  return overusedWords.includes(word) ? 'certainly' : word;
 });
-const logInfo = (param1, param2, param3) => {
-  console.log('Word count: ' + param1);
-};
+console.log(`after removing overused words: ${afterRemove}`);

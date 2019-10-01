@@ -1,10 +1,10 @@
 // Foursquare API Info
-const clientId = '<client id>';
-const clientSecret = '<client secret>';
+const clientId = '<clientId>';
+const clientSecret = '<clientSecret>';
 const url = 'https://api.foursquare.com/v2/venues/explore?near=';
 
 // OpenWeather Info
-const openWeatherKey = '<key>';
+const openWeatherKey = '<openWeatherKey>';
 const weatherUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 // Page Elements
@@ -18,35 +18,34 @@ const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 
 // Add AJAX functions here:
 const getVenues = async () => {
-  const city = $input.val();
+	const city = $input.val();
 	const urlToFetch = `${url}${city}&limit=10&client_id=${clientId}&client_secret=${clientSecret}&v=20191001`;
   try {
     const response = await fetch(urlToFetch);
-    if (response.ok) {
+  	if (response.ok) {
       const jsonResponse = await response.json();
+      console.log(jsonResponse);
       const venues = jsonResponse.response.groups[0].items.map(item => item.venue);
       console.log(venues);
-	    return venues;
+      return venues;
     }
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 const getForecast = async () => {
-  const urlToFetch = `${weatherUrl}?&q=${$input.val()}&APPID=${openWeatherKey}`;
-	try {
+  const urlToFetch = `${weatherUrl}?q=${$input.val()}&APPID=${openWeatherKey}`;
+  try {
     const response = await fetch(urlToFetch);
     if (response.ok) {
       const jsonResponse = await response.json();
-      console.log(jsonResponse);
       return jsonResponse;
     }
   } catch (error) {
     console.log(error);
   }
 }
-
 
 // Render functions
 const renderVenues = (venues) => {
@@ -63,7 +62,7 @@ const renderVenues = (venues) => {
 
 const renderForecast = (day) => {
   // Add your code here:
-  const weatherContent = createWeatherHTML(day);
+	const weatherContent = createWeatherHTML(day);
   $weatherDiv.append(weatherContent);
 }
 
@@ -73,7 +72,7 @@ const executeSearch = () => {
   $destination.empty();
   $container.css("visibility", "visible");
   getVenues().then(venues => renderVenues(venues));
-  getForecast().then(forecast => renderForecast(forecast));
+	getForecast().then(forecast => renderForecast(forecast));
   return false;
 }
 

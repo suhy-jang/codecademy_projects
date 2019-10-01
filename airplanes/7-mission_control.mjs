@@ -1,4 +1,5 @@
-import { availableAirplanes, flightRequirements, meetsStaffRequirements, meetsSpeedRangeRequirements } from './5-airplane';
+import { availableAirplanes, flightRequirements, meetsStaffRequirements } from './7-airplane.mjs';
+import meetsSpeedRangeRequirements from './7-airplane.mjs';
 function displayFuelCapacity() {
   availableAirplanes.forEach(element => {
     console.log('Fuel Capacity of ' + element.name + ': ' + element.fuelCapacity);

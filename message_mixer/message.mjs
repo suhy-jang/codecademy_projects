@@ -1,4 +1,4 @@
-import { countCharacter, capitalizeFirstCharacterOfWords, reverseWord, reverseAllWords, replaceFirstOccurence, replaceAllOccurrences, encode, palindrome, pigLatin } from './message_mixer.js';
+import { countCharacter, capitalizeFirstCharacterOfWords, reverseWord, reverseAllWords, replaceFirstOccurence, replaceAllOccurrences, encode, palindrome, pigLatin } from './message_mixer.mjs';
 // import MessageMixer from './messageMixer';
 // const MessageMixer = require('./messageMixer.js');
 function displayMessage() {

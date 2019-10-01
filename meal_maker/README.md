@@ -1,4 +1,4 @@
-# getters and setters
+# objects
 - execution:
 ```
   $ node script.js

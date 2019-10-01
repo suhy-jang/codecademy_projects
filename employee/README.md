@@ -1,4 +1,4 @@
-# project with modules
+# modules import / export
 ### 1: using default export / import
 ### 2: using alias export / import
 - execution:

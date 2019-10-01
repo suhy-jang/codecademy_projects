@@ -1,1 +1,13 @@
 # Codecademy projects
+- mini_linter: iterators
+- meal_maker: objects
+- hospital_workers: classes
+- school_catalogue: classes
+- library: classes
+- airplanes: modules
+- message_mixer: modules
+- employee: modules
+- shopping: promise
+- beans: async-await
+- wordsmith: requests
+- shorten_url: requests

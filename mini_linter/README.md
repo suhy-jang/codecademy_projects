@@ -1,4 +1,4 @@
-# project with linter
+# iterators
 - execution:
 ```
   $ node main.js

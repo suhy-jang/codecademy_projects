@@ -1,4 +1,4 @@
-# Class inherits
+# classes
 - execution:
 ```
   $ node script.js
